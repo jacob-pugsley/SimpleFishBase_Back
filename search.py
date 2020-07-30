@@ -211,7 +211,11 @@ def search(query, disjunctive=False, limit=10):
 
 	parser = QueryParser("id", schema)
 
+	print("got query parser")
+
 	p = parser.parse(content)
+
+	print("parsed content")
 
 	#search for the query terms
 	with ind.searcher() as searcher:

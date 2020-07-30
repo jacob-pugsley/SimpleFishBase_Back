@@ -15,6 +15,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def hello_world():
+    return 'This message has been changed.'
+
 @app.route("/params=<plist>", methods=["GET"])
 def fetchResults(plist):
 	print("plist=", plist)
