@@ -1,11 +1,14 @@
 #!/usr/bin/python3.6
 
+from os import system
 from flask import Flask, request, jsonify
 from search import search, createIndex
 
 import whoosh
 from whoosh.fields import TEXT, Schema
 from whoosh.index import open_dir
+
+from datetime import datetime
 
 import re
 
@@ -14,6 +17,10 @@ from flask_cors import CORS
 #base flask app
 app = Flask(__name__)
 CORS(app)
+
+@app.route("/", methods=["GET"])
+def homePage():
+	return "Flask server loaded. Happy fishing!"
 
 @app.route("/params=<plist>", methods=["GET"])
 def fetchResults(plist):
@@ -57,4 +64,11 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	pass
+else:
+	print("not running as main")
+	createIndex("fishbase-data2.csv")
+	app.config.update(
+		SERVER_NAME='localhost:5000',
+		APPLICATION_ROOT='/',
+	)
