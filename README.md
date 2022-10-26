@@ -4,7 +4,7 @@ This is a search engine for <a href="https://fishbase.org">FishBase</a>, a scien
 The system was designed to be easier for aquarium owners to search than a research database, 
 with an intuitive and simple interface and useful data. The back end uses Python with Flask for hosting and Whoosh for search indexing.
 
-<a href="https://github.com/jacob-pugsley/SimpleFishBase_Front">View front end repository</a>
+<a href="https://github.com/jacob-pugsley/fishbase-react">View front end repository</a>
 
 # Features
 <ul>
